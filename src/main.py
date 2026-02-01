@@ -13,7 +13,7 @@ from llama_index.core.tools import FunctionTool
 
 # BASIC CONFIGURATION
 MAP_NAME = "1.txt"
-GOOGLE_API_KEY = "AIzaSyCwqIGuy8C_N4nFz6GLm16kuc66Rjw8Bmc"
+GOOGLE_API_KEY = "GOOGLE_API_KEY"
 C_AMOUNT = 28
 
 
@@ -359,4 +359,5 @@ if __name__ == "__main__":
 
     asyncio.run(main())
     print(f"\nSOLUTION FOUND!")
+
     print(f"\nTOTAL TIME: {time.perf_counter() - t0:.4f}s")
