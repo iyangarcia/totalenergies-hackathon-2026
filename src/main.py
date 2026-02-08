@@ -13,7 +13,7 @@ from llama_index.core.tools import FunctionTool
 
 # BASIC CONFIGURATION
 MAP_NAME = "1.txt"
-GOOGLE_API_KEY = "GOOGLE_API_KEY"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 C_AMOUNT = 28
 
 
