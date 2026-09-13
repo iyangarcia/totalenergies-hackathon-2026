@@ -3,6 +3,11 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Generated solver output / rendered maps
+outputs/
+generated_images/
+.pytest_cache/
+
 # C extensions
 *.so
 

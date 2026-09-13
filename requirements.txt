@@ -1,4 +1,4 @@
-llama-index
-llama-index-llms-google-genai
-matplotlib
-numpy
+numpy>=1.26
+ortools>=9.10
+matplotlib>=3.8
+pytest>=8.0

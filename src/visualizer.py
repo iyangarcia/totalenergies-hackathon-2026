@@ -1,18 +1,21 @@
+import argparse
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
 import os
 
-# --- GLOBAL VARIABLES ---
-MAP_NAME = "1.txt"
-
 # --- PATHS ---
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(SCRIPT_DIR)
 
-# Map paths
-input_path = os.path.join(BASE_DIR, "inputs", MAP_NAME)
-output_path = os.path.join(BASE_DIR, "outputs", MAP_NAME)
+parser = argparse.ArgumentParser(description="Render input/output maps as heatmap images.")
+parser.add_argument("--input", default="1.txt", help="Map filename inside inputs/, or a full path.")
+parser.add_argument("--output", default=None, help="Generated map path (default: outputs/<input filename>).")
+args = parser.parse_args()
+
+MAP_NAME = os.path.basename(args.input)
+input_path = args.input if os.path.isabs(args.input) or os.path.exists(args.input) else os.path.join(BASE_DIR, "inputs", args.input)
+output_path = args.output or os.path.join(BASE_DIR, "outputs", MAP_NAME)
 
 # Image paths
 image_paths = {
